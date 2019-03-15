@@ -1,4 +1,5 @@
-# skelcd-control-MicroOS
+skelcd-control-MicroOS
+===================
 
 Installation control file for openSUSE MicroOS
 
