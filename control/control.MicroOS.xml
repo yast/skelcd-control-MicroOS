@@ -16,6 +16,7 @@ textdomain="control"
         <enable_sshd config:type="boolean">true</enable_sshd>
         <timezone>UTC</timezone>
         <readonly_timezone config:type="boolean">false</readonly_timezone>
+        <readonly_language config:type="boolean">true</readonly_language>
 
         <!-- FATE #303875, see /etc/sysconfig/network/dhcp:WRITE_HOSTNAME_TO_HOSTS -->
         <write_hostname_to_hosts config:type="boolean">false</write_hostname_to_hosts>
@@ -89,7 +90,7 @@ textdomain="control"
 
         <selection_type config:type="symbol">auto</selection_type>
 
-        <default_patterns>MicroOS MicroOS-defaults MicroOS-hardware MicroOS-apparmor</default_patterns>
+        <default_patterns>MicroOS-base MicroOS-defaults MicroOS-hardware MicroOS-apparmor</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -226,7 +227,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>MicroOS MicroOS-defaults MicroOS-hardware MicroOS-apparmor MicroOS-container-runtime</default_patterns>
+            <default_patterns>MicroOS-base MicroOS-defaults MicroOS-hardware MicroOS-apparmor container-runtime</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
