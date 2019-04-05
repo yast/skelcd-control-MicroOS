@@ -90,7 +90,7 @@ textdomain="control"
 
         <selection_type config:type="symbol">auto</selection_type>
 
-        <default_patterns>MicroOS-base MicroOS-defaults MicroOS-hardware MicroOS-apparmor</default_patterns>
+        <default_patterns>microos_base microos_defaults microos_hardware microos_apparmor</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -227,7 +227,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>MicroOS-base MicroOS-defaults MicroOS-hardware MicroOS-apparmor container-runtime</default_patterns>
+            <default_patterns>microos_base microos_defaults microos_hardware microos_apparmor container_runtime</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
