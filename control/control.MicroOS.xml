@@ -312,8 +312,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         </container_host_role>
         <container_host_description>
           <label>• MicroOS optimised for hosting container workloads
-• Includes Podman Container Runtime by default
-          </label>
+• Includes Podman Container Runtime by default</label>
         </container_host_description>
     </texts>
 
