@@ -105,6 +105,9 @@ textdomain="control"
         <!-- Try to install as few packages as possible: only required ones, no
              documentation and no multiversion (FATE#321764) -->
         <minimalistic_libzypp_config config:type="boolean">true</minimalistic_libzypp_config>
+      
+        <!-- boo#1124590 - Ensure correct product is selected -->
+        <select_product>openSUSE-MicroOS</select_product>
     </software>
 
     <partitioning>
@@ -155,6 +158,9 @@ textdomain="control"
                     </subvolume>
                     <subvolume>
                         <path>opt</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>srv</path>
                     </subvolume>
 
                     <!-- architecture specific subvolumes -->
