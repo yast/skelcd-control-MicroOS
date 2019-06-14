@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu Jun 13 14:57:51 UTC 2019 - Richard Brown <rbrown@suse.de>
+
+- Add srv as a subvolume [boo#1132436]
+- Select product on installation [boo#1124590]
+- 20190613
+
+-------------------------------------------------------------------
 Tue Apr 16 13:15:21 UTC 2019 - Richard Brown <rbrown@suse.de>
 
 - Actually Fix MicroOS Container Host description [boo#1131975]
