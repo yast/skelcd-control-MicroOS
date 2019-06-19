@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Jun 19 13:55:23 UTC 2019 - Richard Brown <rbrown@suse.de>
+
+- Add /boot/writable subvolume [boo#1138725]
+- 20190619
+
+-------------------------------------------------------------------
 Thu Jun 13 14:57:51 UTC 2019 - Richard Brown <rbrown@suse.de>
 
 - Add srv as a subvolume [boo#1132436]
