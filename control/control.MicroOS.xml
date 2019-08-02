@@ -162,8 +162,11 @@ textdomain="control"
                     <subvolume>
                         <path>srv</path>
                     </subvolume>
-		    <subvolume>
-			<path>boot/writable</path>
+                    <subvolume>
+                        <path>boot/writable</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>usr/local</path>
                     </subvolume>
 
                     <!-- architecture specific subvolumes -->
