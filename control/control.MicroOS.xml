@@ -235,6 +235,258 @@ textdomain="control"
         <additional_dialogs>inst_microos_role</additional_dialogs>
       </system_role>
 
+      <system_role>
+        <id>micro_os_gnome_desktop_role</id>
+        
+        <globals>
+          <enable_kdump config:type="boolean">false</enable_kdump>
+       </globals>
+        <network>
+          <network_manager>always</network_manager>
+        </network>
+	      <software>	
+            <default_patterns>microos_base microos_defaults microos_hardware microos_apparmor microos_gnome_desktop container_runtime</default_patterns>
+        </software>
+        <partitioning>
+        <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
+
+        <proposal>
+            <lvm config:type="boolean">false</lvm>
+            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
+            <windows_delete_mode config:type="symbol">all</windows_delete_mode>
+            <linux_delete_mode config:type="symbol">all</linux_delete_mode>
+            <other_delete_mode config:type="symbol">all</other_delete_mode>
+        </proposal>
+
+        <volumes config:type="list">
+            <!-- The / filesystem -->
+            <volume>
+                <mount_point>/</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <desired_size config:type="disksize">20 GiB</desired_size>
+                <min_size config:type="disksize">11 GiB</min_size>
+                <max_size config:type="disksize">unlimited</max_size>
+                <weight config:type="integer">40</weight>
+                <!-- Always use snapshots, no matter what -->
+                <snapshots config:type="boolean">true</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
+
+                <!-- You don't want to miss the / volume -->
+                <proposed_configurable config:type="boolean">false</proposed_configurable>
+
+                <!-- the default subvolume "@" was requested by product management -->
+                <btrfs_default_subvolume>@</btrfs_default_subvolume>
+                <!-- root filesystem should be read-only -->
+                <btrfs_read_only config:type="boolean">true</btrfs_read_only>
+
+                <!-- Subvolumes to be created for a Btrfs root file system -->
+                <!-- copy_on_write is true by default -->
+                <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
+                <subvolumes config:type="list">
+                    <subvolume>
+                        <path>root</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>tmp</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>home</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>opt</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>srv</path>
+                    </subvolume>
+		    <subvolume>                                                                                      
+                        <path>boot/writable</path>                                                                   
+                    </subvolume>                                                                                     
+                    <subvolume>                                                                                      
+                        <path>usr/local</path>                                                                       
+                    </subvolume>   	
+
+                    <!-- architecture specific subvolumes -->
+
+                    <subvolume>
+                        <path>boot/grub2/arm64-efi</path>
+                        <archs>aarch64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/i386-pc</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/powerpc-ieee1275</path>
+                        <archs>ppc,!board_powernv</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/s390x-emu</path>
+                        <archs>s390</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/x86_64-efi</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                </subvolumes>
+            </volume>
+
+            <volume>
+                <!-- unified var partition - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+                <mount_point>/var</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <snapshots config:type="boolean">false</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
+
+                <desired_size config:type="disksize">19 GiB</desired_size>
+                <min_size config:type="disksize">8 GiB</min_size>
+                <max_size config:type="disksize">unlimited</max_size>
+                <weight config:type="integer">10</weight>
+
+                <!-- Give up in a separate partition if the min size doesn't fit -->
+                <disable_order config:type="integer">1</disable_order>
+
+                <!-- If this volume is disabled, we want "/" to increase -->
+                <fallback_for_desired_size>/</fallback_for_desired_size>
+                <fallback_for_max_size>/</fallback_for_max_size>
+                <fallback_for_weight>/</fallback_for_weight>
+            </volume>
+
+            <!-- No swap partition is defined, so it's never created -->
+        </volumes>
+        </partitioning>
+
+        <order config:type="integer">300</order>
+        <additional_dialogs>inst_user_first</additional_dialogs>
+      </system_role>
+      
+      <system_role>
+        <id>micro_os_kde_desktop_role</id>
+        
+        <globals>
+          <enable_kdump config:type="boolean">false</enable_kdump>
+       </globals>
+        <network>
+          <network_manager>always</network_manager>
+        </network>
+	      <software>	
+            <default_patterns>microos_base microos_defaults microos_hardware microos_apparmor microos_kde_desktop container_runtime</default_patterns>
+        </software>
+        <partitioning>
+        <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
+
+        <proposal>
+            <lvm config:type="boolean">false</lvm>
+            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
+            <windows_delete_mode config:type="symbol">all</windows_delete_mode>
+            <linux_delete_mode config:type="symbol">all</linux_delete_mode>
+            <other_delete_mode config:type="symbol">all</other_delete_mode>
+        </proposal>
+
+        <volumes config:type="list">
+            <!-- The / filesystem -->
+            <volume>
+                <mount_point>/</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <desired_size config:type="disksize">20 GiB</desired_size>
+                <min_size config:type="disksize">11 GiB</min_size>
+                <max_size config:type="disksize">unlimited</max_size>
+                <weight config:type="integer">40</weight>
+                <!-- Always use snapshots, no matter what -->
+                <snapshots config:type="boolean">true</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
+
+                <!-- You don't want to miss the / volume -->
+                <proposed_configurable config:type="boolean">false</proposed_configurable>
+
+                <!-- the default subvolume "@" was requested by product management -->
+                <btrfs_default_subvolume>@</btrfs_default_subvolume>
+                <!-- root filesystem should be read-only -->
+                <btrfs_read_only config:type="boolean">true</btrfs_read_only>
+
+                <!-- Subvolumes to be created for a Btrfs root file system -->
+                <!-- copy_on_write is true by default -->
+                <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
+                <subvolumes config:type="list">
+                    <subvolume>
+                        <path>root</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>tmp</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>home</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>opt</path>
+                    </subvolume>
+                    <subvolume>
+                        <path>srv</path>
+                    </subvolume>
+		                <subvolume>                                                                                      
+                        <path>boot/writable</path>                                                                   
+                    </subvolume>                                                                                     
+                    <subvolume>                                                                                      
+                        <path>usr/local</path>                                                                       
+                    </subvolume>   	
+
+                    <!-- architecture specific subvolumes -->
+
+                    <subvolume>
+                        <path>boot/grub2/arm64-efi</path>
+                        <archs>aarch64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/i386-pc</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/powerpc-ieee1275</path>
+                        <archs>ppc,!board_powernv</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/s390x-emu</path>
+                        <archs>s390</archs>
+                    </subvolume>
+                    <subvolume>
+                        <path>boot/grub2/x86_64-efi</path>
+                        <archs>x86_64</archs>
+                    </subvolume>
+                </subvolumes>
+            </volume>
+
+            <volume>
+                <!-- unified var partition - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+                <mount_point>/var</mount_point>
+                <!-- Default == final, since the user can't change it -->
+                <fs_type>btrfs</fs_type>
+                <snapshots config:type="boolean">false</snapshots>
+                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
+
+                <desired_size config:type="disksize">19 GiB</desired_size>
+                <min_size config:type="disksize">8 GiB</min_size>
+                <max_size config:type="disksize">unlimited</max_size>
+                <weight config:type="integer">10</weight>
+
+                <!-- Give up in a separate partition if the min size doesn't fit -->
+                <disable_order config:type="integer">1</disable_order>
+
+                <!-- If this volume is disabled, we want "/" to increase -->
+                <fallback_for_desired_size>/</fallback_for_desired_size>
+                <fallback_for_max_size>/</fallback_for_max_size>
+                <fallback_for_weight>/</fallback_for_weight>
+            </volume>
+
+            <!-- No swap partition is defined, so it's never created -->
+        </volumes>
+        </partitioning>
+
+        <order config:type="integer">400</order>
+        <additional_dialogs>inst_user_first</additional_dialogs>
+      </system_role>
+
     </system_roles>
 
     <clone_modules config:type="list">
@@ -315,7 +567,26 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         <container_host_role_description>
           <label>• MicroOS optimised for hosting container workloads
 • Includes Podman Container Runtime by default</label>
-        </container_host_role_description>
+	</container_host_role_description>
+        <micro_os_gnome_desktop_role>
+          <!-- TRANSLATORS: a label for a system role -->
+          <label>MicroOS Desktop (GNOME) [ALPHA]</label>
+        </micro_os_gnome_desktop_role>
+        <micro_os_gnome_desktop_role_description>
+          <label>• MicroOS Desktop with automatic updates and rollback
+• Install Apps using `Software`
+• Includes Podman Container Runtime by default</label>
+        </micro_os_gnome_desktop_role_description>
+        <micro_os_kde_desktop_role>
+          <!-- TRANSLATORS: a label for a system role -->
+          <label>MicroOS Desktop (KDE Plasma) [ALPHA]</label>
+        </micro_os_kde_desktop_role>
+        <micro_os_kde_desktop_role_description>
+          <label>• MicroOS Desktop with automatic updates and rollback
+• Install Apps using `Discover`
+• Includes Podman Container Runtime by default</label>
+        </micro_os_kde_desktop_role_description>
+
     </texts>
 
     <proposals config:type="list">
@@ -358,6 +629,10 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                 <proposal_module>
                     <name>clone</name>
                     <presentation_order>99</presentation_order>
+                </proposal_module>
+                <proposal_module>
+                    <name>default_target</name>
+                    <presentation_order>60</presentation_order>
                 </proposal_module>
                 <!-- software proposal should be computed almost at the end -->
                 <proposal_module>
