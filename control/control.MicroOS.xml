@@ -103,7 +103,6 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
-            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
@@ -252,7 +251,6 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
-            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
@@ -378,7 +376,6 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
-            <proposal_settings_editable config:type="boolean">true</proposal_settings_editable>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
