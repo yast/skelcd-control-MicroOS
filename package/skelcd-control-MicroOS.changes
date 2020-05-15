@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri May 15 12:25:43 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
+
+- Adjust for 15.2 MicroOS, 15.2 especially does not contain desktop roles
+- 15.2.1
+
+-------------------------------------------------------------------
 Thu May 14 15:09:18 UTC 2020 - Ladislav Slezák <lslezak@suse.cz>
 
 - Adapt the versioning for Leap 15.2 (bsc#1171683)

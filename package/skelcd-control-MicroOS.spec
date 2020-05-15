@@ -118,7 +118,7 @@ Requires:       yast2-vm
 
 Url:            https://github.com/yast/skelcd-control-MicroOS
 AutoReqProv:    off
-Version:        15.2.0
+Version:        15.2.1
 Release:        0
 Summary:        The MicroOS control file needed for installation
 License:        MIT
