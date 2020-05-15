@@ -1,0 +1,4 @@
+*.pot
+package/*.tar.bz2
+# result of autorun of yardoc on all packages
+/.yardoc

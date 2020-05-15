@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu May 14 15:09:18 UTC 2020 - Ladislav Slezák <lslezak@suse.cz>
+
+- Adapt the versioning for Leap 15.2 (bsc#1171683)
+- 15.2.0
+
+-------------------------------------------------------------------
 Mon May 11 07:41:15 UTC 2020 - Steffen Winterfeldt <snwint@suse.com>
 
 - remove obsolete proposal_settings_editable (bsc#1171423)
