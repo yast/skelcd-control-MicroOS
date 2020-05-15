@@ -19,12 +19,12 @@
   </xsl:template>
 
   <!-- Add the "extra_urls" part from the normal openSUSE control file -->
-  <xsl:template match="n:software">
+  <xsl:template match="n:extra_urls">
     <xsl:copy>
       <xsl:apply-templates select="node()|@*"/>
       <!-- Make sure this is the openSUSE control file!, try both (old and the new) locations -->
-      <xsl:copy-of select="document('/usr/lib/skelcd/CD1/control.xml')/*/n:software/n:extra_urls"/>
-      <xsl:copy-of select="document('/CD1/control.xml')/*/n:software/n:extra_urls"/>
+      <xsl:copy-of select="document('/usr/lib/skelcd/CD1/control.xml')/*/n:software/n:extra_urls/*"/>
+      <xsl:copy-of select="document('/CD1/control.xml')/*/n:software/n:extra_urls/*"/>
     </xsl:copy>
   </xsl:template>
 
