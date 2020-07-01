@@ -138,9 +138,6 @@ textdomain="control"
                         <path>root</path>
                     </subvolume>
                     <subvolume>
-                        <path>tmp</path>
-                    </subvolume>
-                    <subvolume>
                         <path>home</path>
                     </subvolume>
                     <subvolume>
@@ -286,9 +283,6 @@ textdomain="control"
                         <path>root</path>
                     </subvolume>
                     <subvolume>
-                        <path>tmp</path>
-                    </subvolume>
-                    <subvolume>
                         <path>home</path>
                     </subvolume>
                     <subvolume>
@@ -409,9 +403,6 @@ textdomain="control"
                 <subvolumes config:type="list">
                     <subvolume>
                         <path>root</path>
-                    </subvolume>
-                    <subvolume>
-                        <path>tmp</path>
                     </subvolume>
                     <subvolume>
                         <path>home</path>
