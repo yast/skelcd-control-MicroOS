@@ -152,9 +152,6 @@ textdomain="control"
                         <path>root</path>
                     </subvolume>
                     <subvolume>
-                        <path>tmp</path>
-                    </subvolume>
-                    <subvolume>
                         <path>home</path>
                     </subvolume>
                     <subvolume>
