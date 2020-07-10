@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Jul 10 15:22:08 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
+
+- Remove tmp subvolume for transactional systems
+  [boo#1173461][jsc#PM-1898]
+- 15.2.2
+
+-------------------------------------------------------------------
 Fri May 15 12:25:43 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
 
 - Adjust for 15.2 MicroOS, 15.2 especially does not contain desktop roles
