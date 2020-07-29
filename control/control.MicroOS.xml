@@ -1002,10 +1002,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                 </module>
                 <module>
                     <label>Perform Installation</label>
-                    <name>autoimage</name>
-                </module>
-                <module>
-                    <label>Perform Installation</label>
                     <name>rpmcopy</name>
                 </module>
                 <module>
