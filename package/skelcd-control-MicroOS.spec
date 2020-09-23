@@ -154,12 +154,12 @@ make -C control check
 #
 # Add control file
 #
-mkdir -p $RPM_BUILD_ROOT%{?skelcdpath}/CD1
-install -m 644 control/control.TWMicroOS.xml $RPM_BUILD_ROOT%{?skelcdpath}/CD1/control.xml
+mkdir -p %{buildroot}/%{?skelcdpath}/CD1
+install -m 644 control/control.TWMicroOS.xml %{buildroot}/%{?skelcdpath}/CD1/control.xml
 
 # install LICENSE (required by build service check)
-mkdir -p $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
-install -m 644 LICENSE $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
+mkdir -p %{buildroot}/%{_defaultdocdir}/%{name}
+install -m 644 LICENSE %{buildroot}/%{_defaultdocdir}/%{name}
 
 %files
 %defattr(644,root,root,755)
@@ -168,7 +168,7 @@ install -m 644 LICENSE $RPM_BUILD_ROOT/%{_prefix}/share/doc/packages/%{name}
 %endif
 %dir %{?skelcdpath}/CD1
 %{?skelcdpath}/CD1/control.xml
-%doc %dir %{_prefix}/share/doc/packages/%{name}
-%license %{_prefix}/share/doc/packages/%{name}/LICENSE
+%doc %dir %{_defaultdocdir}/%{name}
+%license %{_defaultdocdir}/%{name}/LICENSE
 
 %changelog
