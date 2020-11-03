@@ -1,5 +1,5 @@
 #
-# spec file for package skelcd-control-SMO
+# spec file for package skelcd-control-MicroOS
 #
 # Copyright (c) 2020 SUSE LLC
 #
@@ -15,17 +15,24 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-
+######################################################################
+#
+# IMPORTANT: Please do not change the control file or this spec file
+#   in build service directly, use
+#   https://github.com/yast/skelcd-control-MicroOS repository
+#
+#   See https://github.com/yast/.github/blob/master/CONTRIBUTING.md
+#   for more details.
 Name:           skelcd-control-MicroOS
 Version:        5.0.0
 Release:        0
-Summary:        The SUSEM MicroOS Installation Control file
+Summary:        The SUSE MicroOS Installation Control file
 License:        MIT
 Group:          Metapackages
 #
 ######################################################################
-URL:            https://github.com/yast/skelcd-control-SMO
-Source:         skelcd-control-SMO-%{version}.tar.bz2
+URL:            https://github.com/yast/skelcd-control-MicroOS
+Source:         skelcd-control-MicroOS-%{version}.tar.bz2
 # xmllint
 BuildRequires:  libxml2-tools
 # xsltproc
@@ -90,7 +97,7 @@ This package contains the control file used for SUSE MicroOS installation.
 
 %prep
 
-%setup -q -n skelcd-control-SMO-%{version}
+%setup -q -n skelcd-control-MicroOS-%{version}
 
 %build
 %make_build -C control
@@ -103,7 +110,7 @@ This package contains the control file used for SUSE MicroOS installation.
 # Add control file
 #
 mkdir -p %{buildroot}%{_prefix}/lib/skelcd/CD1
-install -m 644 control/control.SMO.xml %{buildroot}%{_prefix}/lib/skelcd/CD1/control.xml
+install -m 644 control/control.MicroOS.xml %{buildroot}%{_prefix}/lib/skelcd/CD1/control.xml
 
 # install LICENSE (required by build service check)
 mkdir -p %{buildroot}/%{_docdir}/%{name}
