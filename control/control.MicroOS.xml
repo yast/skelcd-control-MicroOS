@@ -292,7 +292,7 @@ textdomain="control"
                     <subvolume>
                         <path>srv</path>
                     </subvolume>
-		                <subvolume>                                                                                      
+		    <subvolume>                                                                                      
                         <path>boot/writable</path>                                                                   
                     </subvolume>                                                                                     
                     <subvolume>                                                                                      
