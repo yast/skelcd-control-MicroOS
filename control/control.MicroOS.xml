@@ -115,8 +115,8 @@ textdomain="control"
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
                 <desired_size config:type="disksize">20 GiB</desired_size>
-                <min_size config:type="disksize">11 GiB</min_size>
-                <max_size config:type="disksize">40 GiB</max_size>
+                <min_size config:type="disksize">5 GiB</min_size>
+                <max_size config:type="disksize">20 GiB</max_size>
                 <weight config:type="integer">20</weight>
                 <!-- Always use snapshots, no matter what -->
                 <snapshots config:type="boolean">true</snapshots>
@@ -187,7 +187,7 @@ textdomain="control"
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
 
                 <desired_size config:type="disksize">19 GiB</desired_size>
-                <min_size config:type="disksize">8 GiB</min_size>
+                <min_size config:type="disksize">5 GiB</min_size>
                 <max_size config:type="disksize">unlimited</max_size>
                 <weight config:type="integer">40</weight>
 
@@ -260,9 +260,9 @@ textdomain="control"
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
                 <desired_size config:type="disksize">20 GiB</desired_size>
-                <min_size config:type="disksize">11 GiB</min_size>
+                <min_size config:type="disksize">5 GiB</min_size>
                 <max_size config:type="disksize">unlimited</max_size>
-                <weight config:type="integer">40</weight>
+                <weight config:type="integer">20</weight>
                 <!-- Always use snapshots, no matter what -->
                 <snapshots config:type="boolean">true</snapshots>
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
@@ -284,6 +284,7 @@ textdomain="control"
                     </subvolume>
                     <subvolume>
                         <path>home</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
                     </subvolume>
                     <subvolume>
                         <path>opt</path>
@@ -296,7 +297,12 @@ textdomain="control"
                     </subvolume>                                                                                     
                     <subvolume>                                                                                      
                         <path>usr/local</path>                                                                       
-                    </subvolume>   	
+                    </subvolume>
+                    <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+                    <subvolume>
+                        <path>var</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
+                    </subvolume>
 
                     <!-- architecture specific subvolumes -->
 
@@ -321,28 +327,6 @@ textdomain="control"
                         <archs>x86_64</archs>
                     </subvolume>
                 </subvolumes>
-            </volume>
-
-            <volume>
-                <!-- unified var partition - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
-                <mount_point>/var</mount_point>
-                <!-- Default == final, since the user can't change it -->
-                <fs_type>btrfs</fs_type>
-                <snapshots config:type="boolean">false</snapshots>
-                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
-
-                <desired_size config:type="disksize">19 GiB</desired_size>
-                <min_size config:type="disksize">8 GiB</min_size>
-                <max_size config:type="disksize">unlimited</max_size>
-                <weight config:type="integer">10</weight>
-
-                <!-- Give up in a separate partition if the min size doesn't fit -->
-                <disable_order config:type="integer">1</disable_order>
-
-                <!-- If this volume is disabled, we want "/" to increase -->
-                <fallback_for_desired_size>/</fallback_for_desired_size>
-                <fallback_for_max_size>/</fallback_for_max_size>
-                <fallback_for_weight>/</fallback_for_weight>
             </volume>
 
             <!-- No swap partition is defined, so it's never created -->
@@ -382,9 +366,9 @@ textdomain="control"
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
                 <desired_size config:type="disksize">20 GiB</desired_size>
-                <min_size config:type="disksize">11 GiB</min_size>
+                <min_size config:type="disksize">5 GiB</min_size>
                 <max_size config:type="disksize">unlimited</max_size>
-                <weight config:type="integer">40</weight>
+                <weight config:type="integer">20</weight>
                 <!-- Always use snapshots, no matter what -->
                 <snapshots config:type="boolean">true</snapshots>
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
@@ -406,6 +390,7 @@ textdomain="control"
                     </subvolume>
                     <subvolume>
                         <path>home</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
                     </subvolume>
                     <subvolume>
                         <path>opt</path>
@@ -413,11 +398,16 @@ textdomain="control"
                     <subvolume>
                         <path>srv</path>
                     </subvolume>
-		                <subvolume>                                                                                      
+		    <subvolume>                                                                                      
                         <path>boot/writable</path>                                                                   
                     </subvolume>                                                                                     
                     <subvolume>                                                                                      
                         <path>usr/local</path>                                                                       
+                    </subvolume>
+                    <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
+                    <subvolume>
+                        <path>var</path>
+                        <copy_on_write config:type="boolean">false</copy_on_write>
                     </subvolume>   	
 
                     <!-- architecture specific subvolumes -->
@@ -443,28 +433,6 @@ textdomain="control"
                         <archs>x86_64</archs>
                     </subvolume>
                 </subvolumes>
-            </volume>
-
-            <volume>
-                <!-- unified var partition - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
-                <mount_point>/var</mount_point>
-                <!-- Default == final, since the user can't change it -->
-                <fs_type>btrfs</fs_type>
-                <snapshots config:type="boolean">false</snapshots>
-                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
-
-                <desired_size config:type="disksize">19 GiB</desired_size>
-                <min_size config:type="disksize">8 GiB</min_size>
-                <max_size config:type="disksize">unlimited</max_size>
-                <weight config:type="integer">10</weight>
-
-                <!-- Give up in a separate partition if the min size doesn't fit -->
-                <disable_order config:type="integer">1</disable_order>
-
-                <!-- If this volume is disabled, we want "/" to increase -->
-                <fallback_for_desired_size>/</fallback_for_desired_size>
-                <fallback_for_max_size>/</fallback_for_max_size>
-                <fallback_for_weight>/</fallback_for_weight>
             </volume>
 
             <!-- No swap partition is defined, so it's never created -->
