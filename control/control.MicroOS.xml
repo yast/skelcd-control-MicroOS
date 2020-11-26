@@ -236,6 +236,7 @@ textdomain="control"
         
         <globals>
           <enable_kdump config:type="boolean">false</enable_kdump>
+          <polkit_default_privs>standard</polkit_default_privs>
        </globals>
         <network>
           <network_manager>always</network_manager>
@@ -342,6 +343,7 @@ textdomain="control"
         
         <globals>
           <enable_kdump config:type="boolean">false</enable_kdump>
+          <polkit_default_privs>standard</polkit_default_privs>
        </globals>
         <network>
           <network_manager>always</network_manager>
