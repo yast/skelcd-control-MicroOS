@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Dec  1 16:06:15 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
+
+- sync with SLE
+- 15.2.3
+
+-------------------------------------------------------------------
 Fri Jul 10 15:22:08 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
 
 - Remove tmp subvolume for transactional systems
