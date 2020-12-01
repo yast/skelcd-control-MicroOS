@@ -120,8 +120,8 @@ textdomain="control"
                 <!-- Default == final, since the user can't change it -->
                 <fs_type>btrfs</fs_type>
                 <desired_size config:type="disksize">20 GiB</desired_size>
-                <min_size config:type="disksize">11 GiB</min_size>
-                <max_size config:type="disksize">40 GiB</max_size>
+                <min_size config:type="disksize">5 GiB</min_size>
+                <max_size config:type="disksize">20 GiB</max_size>
                 <weight config:type="integer">20</weight>
                 <!-- Always use snapshots, no matter what -->
                 <snapshots config:type="boolean">true</snapshots>
@@ -195,7 +195,7 @@ textdomain="control"
                 <snapshots_configurable config:type="boolean">false</snapshots_configurable>
 
                 <desired_size config:type="disksize">19 GiB</desired_size>
-                <min_size config:type="disksize">8 GiB</min_size>
+                <min_size config:type="disksize">5 GiB</min_size>
                 <max_size config:type="disksize">unlimited</max_size>
                 <weight config:type="integer">40</weight>
 

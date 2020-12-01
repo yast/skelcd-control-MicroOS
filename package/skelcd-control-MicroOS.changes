@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Nov 25 10:52:19 UTC 2020 - jsrain@suse.com
+
+- unify proposed partition sizes with openSUSE MicroOS
+- 5.0.2
+
+-------------------------------------------------------------------
 Mon Nov  2 17:43:13 UTC 2020 - Ludwig Nussel <lnussel@suse.de>
 
 - Import SMO files and rename to MicroOS again

@@ -24,7 +24,7 @@
 #   See https://github.com/yast/.github/blob/master/CONTRIBUTING.md
 #   for more details.
 Name:           skelcd-control-MicroOS
-Version:        5.0.1
+Version:        5.0.2
 Release:        0
 Summary:        The SUSE MicroOS Installation Control file
 License:        MIT
