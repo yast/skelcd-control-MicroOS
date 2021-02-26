@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Feb 22 21:45:19 EST 2021 - Neal Gompa <ngompa13@gmail.com>
+
+- Declare package manager patterns for each MicroOS role (boo#1182803)
+- 20210222
+
+-------------------------------------------------------------------
 Thu Nov 26 13:21:56 CEST 2020 - Richard Brown <rbrown@suse.de>
 
 - Correct MicroOS Desktop Polkit rules (boo#1163453)
