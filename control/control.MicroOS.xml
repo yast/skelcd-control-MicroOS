@@ -603,6 +603,11 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <name>software</name>
                     <presentation_order>20</presentation_order>
                 </proposal_module>
+                <!-- Security proposal including firewall, CPU mitigation, SELinux and PolicyKit -->
+                <proposal_module>
+                    <name>security</name>
+                    <presentation_order>50</presentation_order>
+                </proposal_module>
             </proposal_modules>
         </proposal>
 
