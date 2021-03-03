@@ -75,7 +75,7 @@ textdomain="control"
           <mode>enforcing</mode>
           <configurable config:type="boolean">true</configurable>
           <!-- There are two SELinux patterns available, "selinux" and "microos_selinux".
-            The lastest has been chosen because its similarity with the one used on
+            The latest has been chosen because its similarity with the one used on
             SLE Micro, "microos-selinux" -->
           <pattern>microos_selinux</pattern>
         </selinux>
