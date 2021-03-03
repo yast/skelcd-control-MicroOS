@@ -77,7 +77,7 @@ textdomain="control"
           <!-- There are two SELinux patterns available, "selinux" and "microos_selinux".
             The latest has been chosen because its similarity with the one used on
             SLE Micro, "microos-selinux" -->
-          <pattern>microos_selinux</pattern>
+          <patterns>microos_selinux</patterns>
         </selinux>
     </globals>
 
