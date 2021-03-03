@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Mon Mar  1 21:13:55 UTC 2021 - David Diaz <dgonzalez@suse.com>
+
+- Set SELinux enforcing mode by default (jsc#SMO-20) .
+- Use the new security proposal client (jsc#SLE-15840,
+  jsc#SLE-17307).
+- 20210303
+
+-------------------------------------------------------------------
 Mon Feb 22 21:45:19 EST 2021 - Neal Gompa <ngompa13@gmail.com>
 
 - Declare package manager patterns for each MicroOS role (boo#1182803)
