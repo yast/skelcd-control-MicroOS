@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Mar 23 07:28:11 EDT 2021 - Neal Gompa <ngompa13@gmail.com>
+
+- Stop force-installing AppArmor (boo#1183894)
+- 20210323
+
+-------------------------------------------------------------------
 Mon Mar 22 23:28:11 CEST 2021 - Dario Faggioli <dfaggioli@suse.com>
 
 - Enable COW for /home on GNOME and KDE Desktop
