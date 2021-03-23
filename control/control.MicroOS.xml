@@ -294,7 +294,6 @@ textdomain="control"
                     </subvolume>
                     <subvolume>
                         <path>home</path>
-                        <copy_on_write config:type="boolean">false</copy_on_write>
                     </subvolume>
                     <subvolume>
                         <path>opt</path>
@@ -401,7 +400,6 @@ textdomain="control"
                     </subvolume>
                     <subvolume>
                         <path>home</path>
-                        <copy_on_write config:type="boolean">false</copy_on_write>
                     </subvolume>
                     <subvolume>
                         <path>opt</path>
