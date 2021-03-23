@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Mar 23 11:11:40 EDT 2021 - Neal Gompa <ngompa13@gmail.com>
+
+- Replace installing AppArmor patterns with SELinux ones to
+  work around broken yast-security behavior (boo#1183804)
+- Enable SELinux again (jsc#SMO-20)
+- 20210323.2
+
+-------------------------------------------------------------------
 Tue Mar 23 09:48:31 EDT 2021 - Neal Gompa <ngompa13@gmail.com>
 
 - Install AppArmor patterns again and temporarily revert enabling

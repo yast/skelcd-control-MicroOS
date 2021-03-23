@@ -70,6 +70,15 @@ textdomain="control"
         <!-- bnc #431158: Adjusts /etc/sysconfig/security/POLKIT_DEFAULT_PRIVS if set -->
         <polkit_default_privs>restrictive</polkit_default_privs>
 
+        <!-- Set SELinux enforcing mode by default -->
+        <selinux>
+          <mode>enforcing</mode>
+          <configurable config:type="boolean">true</configurable>
+          <!-- There are two SELinux patterns available, "selinux" and "microos_selinux".
+            The latest has been chosen because its similarity with the one used on
+            SLE Micro, "microos-selinux" -->
+          <patterns>microos_selinux</patterns>
+        </selinux>
     </globals>
 
     <software>
@@ -224,7 +233,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_apparmor container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_selinux container_runtime</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
@@ -242,7 +251,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_apparmor microos_gnome_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_gnome_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -348,7 +357,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_apparmor microos_kde_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_kde_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
