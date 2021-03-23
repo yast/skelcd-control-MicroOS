@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Mar 23 09:48:31 EDT 2021 - Neal Gompa <ngompa13@gmail.com>
+
+- Install AppArmor patterns again and temporarily revert enabling
+  SELinux by default to unblock other MicroOS stuff (boo#1183804)
+- 20210323.1
+
+-------------------------------------------------------------------
 Tue Mar 23 07:28:11 EDT 2021 - Neal Gompa <ngompa13@gmail.com>
 
 - Stop force-installing AppArmor (boo#1183894)
