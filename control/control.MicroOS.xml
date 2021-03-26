@@ -535,7 +535,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 	</container_host_role_description>
         <micro_os_gnome_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS Desktop (GNOME) [ALPHA]</label>
+          <label>MicroOS Desktop (GNOME) [BETA]</label>
         </micro_os_gnome_desktop_role>
         <micro_os_gnome_desktop_role_description>
           <label>• MicroOS Desktop with automatic updates and rollback
