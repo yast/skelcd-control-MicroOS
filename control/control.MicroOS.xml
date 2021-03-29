@@ -233,7 +233,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_selinux container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware container_runtime</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
@@ -251,7 +251,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_gnome_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -357,7 +357,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_kde_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -599,15 +599,15 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <name>default_target</name>
                     <presentation_order>60</presentation_order>
                 </proposal_module>
-                <!-- software proposal should be computed almost at the end -->
-                <proposal_module>
-                    <name>software</name>
-                    <presentation_order>20</presentation_order>
-                </proposal_module>
                 <!-- Security proposal including firewall, CPU mitigation, SELinux and PolicyKit -->
                 <proposal_module>
                     <name>security</name>
                     <presentation_order>50</presentation_order>
+                </proposal_module>
+                <!-- software proposal should be computed almost at the end -->
+                <proposal_module>
+                    <name>software</name>
+                    <presentation_order>20</presentation_order>
                 </proposal_module>
             </proposal_modules>
         </proposal>
