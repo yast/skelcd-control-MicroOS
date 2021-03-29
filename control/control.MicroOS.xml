@@ -599,15 +599,15 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
                     <name>default_target</name>
                     <presentation_order>60</presentation_order>
                 </proposal_module>
-                <!-- software proposal should be computed almost at the end -->
-                <proposal_module>
-                    <name>software</name>
-                    <presentation_order>20</presentation_order>
-                </proposal_module>
                 <!-- Security proposal including firewall, CPU mitigation, SELinux and PolicyKit -->
                 <proposal_module>
                     <name>security</name>
                     <presentation_order>50</presentation_order>
+                </proposal_module>
+                <!-- software proposal should be computed almost at the end -->
+                <proposal_module>
+                    <name>software</name>
+                    <presentation_order>20</presentation_order>
                 </proposal_module>
             </proposal_modules>
         </proposal>
