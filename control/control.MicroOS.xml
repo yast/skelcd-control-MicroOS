@@ -233,7 +233,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_selinux container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware container_runtime</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
@@ -251,7 +251,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_gnome_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -357,7 +357,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_selinux microos_kde_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
