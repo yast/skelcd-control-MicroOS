@@ -31,7 +31,7 @@ Name:           skelcd-control-MicroOS
 # xmllint (for validation)
 BuildRequires:  libxml2-tools
 # RNG validation schema
-BuildRequires:  yast2-installation-control >= 4.4.2
+BuildRequires:  yast2-installation-control >= 4.4.3
 
 # xsltproc - for building control.TWMicroOS.xml from control.MicroOS.xml
 BuildRequires:  libxslt-tools
