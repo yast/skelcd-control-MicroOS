@@ -578,6 +578,24 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 • Install Apps using `Software`
 • Includes Podman Container Runtime by default</label>
         </micro_os_gnome_desktop_role_description>
+        <micro_os_role_ra_agent>
+          <!-- TRANSLATORS: a label for a system role -->
+          <label>MicroOS with Remote Attestation (Agent)</label>
+        </micro_os_role_ra_agent>
+        <micro_os_role_ra_agent_description>
+	<label>• Same installation as MicroOS role
+• Remote attestation agent based on Keylime and TPM2.0 (required hardware)
+• Edit /etc/keylime.conf and start keylime_agent.service</label>
+        </micro_os_role_ra_agent_description>
+        <micro_os_role_ra_verifier>
+          <!-- TRANSLATORS: a label for a system role -->
+          <label>MicroOS with Remote Attestation (Verifier)</label>
+        </micro_os_role_ra_verifier>
+        <micro_os_role_ra_verifier_description>
+	<label>• Same installation as MicroOS role
+• Remote attestation verifier based on Keylime and TPM2.0 (required hardware)
+• Edit /etc/keylime.conf and start keylime_{verifier,registrar}.service</label>
+        </micro_os_role_ra_verifier_description>
         <micro_os_kde_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
           <label>MicroOS Desktop (KDE Plasma) [ALPHA]</label>
@@ -587,24 +605,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 • Install Apps using `Discover`
 • Includes Podman Container Runtime by default</label>
         </micro_os_kde_desktop_role_description>
-        <micro_os_role_ra_agent>
-          <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS with Remote Attestation (Agent) [ALPHA]</label>
-        </micro_os_role_ra_agent>
-        <micro_os_role_ra_agent_description>
-	<label>• Same installation as MicroOS role
-• Remote attestation agent based on Keylime and TPM2.0 (required hardware)
-• Edit /etc/keylime.conf and start keylime_agent.service</label>
-        </micro_os_role_ra_agent_description>
-        <micro_os_role_ra_verifier>
-          <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS with Remote Attestation (Verifier) [ALPHA]</label>
-        </micro_os_role_ra_verifier>
-        <micro_os_role_ra_verifier_description>
-	<label>• Same installation as MicroOS role
-• Remote attestation verifier based on Keylime and TPM2.0 (required hardware)
-• Edit /etc/keylime.conf and start keylime_{verifier,registrar}.service</label>
-        </micro_os_role_ra_verifier_description>
 
     </texts>
 
