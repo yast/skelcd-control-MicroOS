@@ -17,11 +17,19 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install Prerequisites
-      run: rake build_dependencies:install
+      # use jing for validation instead of xmllint
+      run: |-
+        rake build_dependencies:install
+        zypper --non-interactive install --no-recommends jing
 
     # just for easier debugging...
     - name: Inspect Installed Packages
       run: rpm -qa | sort
+
+    # must be before the package build as it installs the /usr/lib/skelcd/CD1/control.xml
+    # which overwrites the original file from skelcd-control-openSUSE
+    - name: Validate XML
+      run:  rake test:validate
 
     - name: Package Build
       run: yast-ci-ruby -o package
