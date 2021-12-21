@@ -51,7 +51,7 @@ file TARGET_XML => [ XSL_FILE, BASE_XML ] do
       "--output", TARGET_XML, XSL_FILE, BASE_XML
 end
 
-desc "Build the TWMicroOS XML (set the base SLES file via $BASE_XML, default: #{DEFAULT_OPENSUSE_CONTROL})"
+desc "Build the TWMicroOS XML (set the base XML file via $OPENSUSE_CONTROL, default: #{DEFAULT_OPENSUSE_CONTROL})"
 task :build => TARGET_XML.to_sym
 
 desc "Validate the built XML"
