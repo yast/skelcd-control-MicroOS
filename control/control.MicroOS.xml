@@ -78,15 +78,21 @@ textdomain="control"
         <!-- bnc #431158: Adjusts /etc/sysconfig/security/POLKIT_DEFAULT_PRIVS if set -->
         <polkit_default_privs>restrictive</polkit_default_privs>
 
-        <!-- Set SELinux enforcing mode by default -->
-        <selinux>
-          <mode>enforcing</mode>
+        <!-- Use SELinux in enforcing mode by default -->
+        <lsm>
+          <select>selinux</select>
+          <apparmor>
+            <selectable config:type="boolean">false</selectable>
+          </apparmor>
+          <selinux>
+            <!-- Set SELinux enforcing mode by default -->
+            <mode>enforcing</mode>
+            <configurable config:type="boolean">true</configurable>
+            <selectable config:type="boolean">true</selectable>
+            <patterns>microos_selinux</patterns>
+          </selinux>
           <configurable config:type="boolean">true</configurable>
-          <!-- There are two SELinux patterns available, "selinux" and "microos_selinux".
-            The latest has been chosen because its similarity with the one used on
-            SLE Micro, "microos-selinux" -->
-          <patterns>microos_selinux</patterns>
-        </selinux>
+        </lsm>
     </globals>
 
     <software>
