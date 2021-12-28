@@ -82,8 +82,7 @@ textdomain="control"
         <lsm>
           <select>selinux</select>
           <apparmor>
-            <patterns>microos_selinux</patterns>
-            <selectable config:type="boolean">true</selectable>
+            <selectable config:type="boolean">false</selectable>
           </apparmor>
           <selinux>
             <!-- Set SELinux enforcing mode by default -->
