@@ -101,7 +101,7 @@ textdomain="control"
 
         <selection_type config:type="symbol">auto</selection_type>
 
-        <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware</default_patterns>
+        <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware bootloader</default_patterns>
         <!-- bnc#876760: Explicitly selecting these (optional) patterns by default if they exist -->
         <optional_default_patterns>32bit</optional_default_patterns>
 
@@ -249,7 +249,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware container_runtime bootloader</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
@@ -267,7 +267,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime bootloader</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -373,7 +373,7 @@ textdomain="control"
           <network_manager>always</network_manager>
         </network>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime</default_patterns>
+            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime bootloader</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -472,7 +472,7 @@ textdomain="control"
         <id>micro_os_role_ra_agent</id>
 
 	<software>
-          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_agent</default_patterns>
+          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_agent bootloader</default_patterns>
 	</software>
         <order config:type="integer">500</order>
         <additional_dialogs>inst_microos_role</additional_dialogs>
@@ -482,7 +482,7 @@ textdomain="control"
         <id>micro_os_role_ra_verifier</id>
 
 	<software>
-          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_verifier</default_patterns>
+          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_verifier bootloader</default_patterns>
 	</software>
         <order config:type="integer">600</order>
         <additional_dialogs>inst_microos_role</additional_dialogs>
