@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Mon Jan 24 21:12:31 UTC 2022 - David Diaz <dgonzalez@suse.com>
 
-- Add bootloader pattern for all roles (gh#yast/skelcd-control-MicroOS/#47).
+- Add bootloader pattern for all roles (gh#yast/skelcd-control-MicroOS#47).
   Sent by Alberto Planas <aplanas@suse.com>.
 - 20220124
 
