@@ -32,3 +32,42 @@ namespace :version do
     File.write(spec_file, spec)
   end
 end
+
+CONTROL_SCHEMA = "/usr/share/YaST2/control/control.rng".freeze
+XSL_FILE = "control/control.MicroOS.xsl".freeze
+DEFAULT_OPENSUSE_CONTROL="/usr/lib/skelcd/CD1/control.xml"
+OPENSUSE_CONTROL = ENV["OPENSUSE_CONTROL"] || DEFAULT_OPENSUSE_CONTROL
+TARGET_XML = "control/control.TWMicroOS.xml".freeze
+BASE_XML = "control/control.MicroOS.xml"
+
+file TARGET_XML => [ XSL_FILE, BASE_XML ] do
+    # the location is relative to the input file, change the CWD so relative
+    # paths work correctly
+    Dir.chdir("control") do
+      abort "Missing file #{OPENSUSE_CONTROL}" unless File.exist?(OPENSUSE_CONTROL)
+    end
+
+    sh "xsltproc", "--stringparam", "openSUSE_control_file", OPENSUSE_CONTROL,
+      "--output", TARGET_XML, XSL_FILE, BASE_XML
+end
+
+desc "Build the TWMicroOS XML (set the base XML file via $OPENSUSE_CONTROL, default: #{DEFAULT_OPENSUSE_CONTROL})"
+task :build => TARGET_XML.to_sym
+
+desc "Validate the built XML"
+task :"test:validate" => TARGET_XML do
+  begin
+    # prefer using jing for validation
+    sh "jing", CONTROL_SCHEMA, TARGET_XML
+    puts "OK"
+  rescue Errno::ENOENT
+    # fallback to xmllint
+    sh "xmllint", "--noout", "--relaxng", CONTROL_SCHEMA, TARGET_XML
+  end
+end
+
+desc "Remove the generated XML file"
+task :clean do
+  rm TARGET_XML if File.exist?(TARGET_XML)
+end
+
