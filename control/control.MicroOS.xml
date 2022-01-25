@@ -585,7 +585,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         <micro_os_role_ra_agent_description>
 	<label>• Same installation as MicroOS role
 • Remote attestation agent based on Keylime and TPM2.0 (required hardware)
-• Edit /etc/keylime.conf and start keylime_agent.service</label>
+• Create /etc/keylime.conf based on /etc/usr/keylime.conf and start keylime_agent.service</label>
         </micro_os_role_ra_agent_description>
         <micro_os_role_ra_verifier>
           <!-- TRANSLATORS: a label for a system role -->
@@ -594,7 +594,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
         <micro_os_role_ra_verifier_description>
 	<label>• Same installation as MicroOS role
 • Remote attestation verifier based on Keylime and TPM2.0 (required hardware)
-• Edit /etc/keylime.conf and start keylime_{verifier,registrar}.service</label>
+• Create /etc/keylime.conf based on /etc/usr/keylime.conf and start keylime_{verifier,registrar}.service</label>
         </micro_os_role_ra_verifier_description>
         <micro_os_kde_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
