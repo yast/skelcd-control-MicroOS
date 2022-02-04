@@ -228,9 +228,7 @@ textdomain="control"
     </partitioning>
 
     <network>
-        <force_static_ip config:type="boolean">false</force_static_ip>
-        <network_manager>never</network_manager>
-        <startmode>auto</startmode>
+        <network_manager>always</network_manager>
         <ipv4_forward config:type="boolean">true</ipv4_forward>
         <ipv6_forward config:type="boolean">true</ipv6_forward>
     </network>
@@ -263,9 +261,6 @@ textdomain="control"
           <enable_kdump config:type="boolean">false</enable_kdump>
           <polkit_default_privs>standard</polkit_default_privs>
        </globals>
-        <network>
-          <network_manager>always</network_manager>
-        </network>
 	      <software>	
             <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime bootloader</default_patterns>
         </software>
@@ -369,9 +364,6 @@ textdomain="control"
           <enable_kdump config:type="boolean">false</enable_kdump>
           <polkit_default_privs>standard</polkit_default_privs>
        </globals>
-        <network>
-          <network_manager>always</network_manager>
-        </network>
 	      <software>	
             <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime bootloader</default_patterns>
         </software>
