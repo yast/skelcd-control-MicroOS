@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Feb 23 13:37:12 UTC 2022 - Frederic Crozat <fcrozat@suse.com>
+
+- Enable recommends for GNOME desktop system role
+- 20220223
+
+-------------------------------------------------------------------
 Fri Feb 04 09:23:32 UTC 2022 - Richard Brown <rbrown@suse.com>
 
 - Use NetworkManager always (boo#1172684)

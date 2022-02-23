@@ -263,6 +263,7 @@ textdomain="control"
        </globals>
 	      <software>	
             <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime bootloader</default_patterns>
+            <install_recommended config:type="boolean">true</install_recommended>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
