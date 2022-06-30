@@ -262,7 +262,7 @@ textdomain="control"
           <polkit_default_privs>standard</polkit_default_privs>
        </globals>
 	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_gnome_desktop container_runtime bootloader</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_gnome_desktop container_runtime bootloader</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
@@ -354,112 +354,8 @@ textdomain="control"
         </partitioning>
 
         <order config:type="integer">300</order>
-        <additional_dialogs>inst_user_first</additional_dialogs>
       </system_role>
       
-      <system_role>
-        <id>micro_os_kde_desktop_role</id>
-        
-        <globals>
-          <enable_kdump config:type="boolean">false</enable_kdump>
-          <polkit_default_privs>standard</polkit_default_privs>
-       </globals>
-	      <software>	
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime bootloader</default_patterns>
-        </software>
-        <partitioning>
-        <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
-
-        <proposal>
-            <lvm config:type="boolean">false</lvm>
-            <windows_delete_mode config:type="symbol">all</windows_delete_mode>
-            <linux_delete_mode config:type="symbol">all</linux_delete_mode>
-            <other_delete_mode config:type="symbol">all</other_delete_mode>
-        </proposal>
-
-        <volumes config:type="list">
-            <!-- The / filesystem -->
-            <volume>
-                <mount_point>/</mount_point>
-                <!-- Default == final, since the user can't change it -->
-                <fs_type>btrfs</fs_type>
-                <desired_size config:type="disksize">20 GiB</desired_size>
-                <min_size config:type="disksize">5 GiB</min_size>
-                <max_size config:type="disksize">unlimited</max_size>
-                <weight config:type="integer">20</weight>
-                <!-- Always use snapshots, no matter what -->
-                <snapshots config:type="boolean">true</snapshots>
-                <snapshots_configurable config:type="boolean">false</snapshots_configurable>
-
-                <!-- You don't want to miss the / volume -->
-                <proposed_configurable config:type="boolean">false</proposed_configurable>
-
-                <!-- the default subvolume "@" was requested by product management -->
-                <btrfs_default_subvolume>@</btrfs_default_subvolume>
-                <!-- root filesystem should be read-only -->
-                <btrfs_read_only config:type="boolean">true</btrfs_read_only>
-
-                <!-- Subvolumes to be created for a Btrfs root file system -->
-                <!-- copy_on_write is true by default -->
-                <!-- The XML parser is very simplistic, thus not using attributes, but sub-elements -->
-                <subvolumes config:type="list">
-                    <subvolume>
-                        <path>root</path>
-                    </subvolume>
-                    <subvolume>
-                        <path>home</path>
-                    </subvolume>
-                    <subvolume>
-                        <path>opt</path>
-                    </subvolume>
-                    <subvolume>
-                        <path>srv</path>
-                    </subvolume>
-		    <subvolume>                                                                                      
-                        <path>boot/writable</path>                                                                   
-                    </subvolume>                                                                                     
-                    <subvolume>                                                                                      
-                        <path>usr/local</path>                                                                       
-                    </subvolume>
-                    <!-- unified var subvolume - https://lists.opensuse.org/opensuse-packaging/2017-11/msg00017.html -->
-                    <subvolume>
-                        <path>var</path>
-                        <copy_on_write config:type="boolean">false</copy_on_write>
-                    </subvolume>   	
-
-                    <!-- architecture specific subvolumes -->
-
-                    <subvolume>
-                        <path>boot/grub2/arm64-efi</path>
-                        <archs>aarch64</archs>
-                    </subvolume>
-                    <subvolume>
-                        <path>boot/grub2/i386-pc</path>
-                        <archs>x86_64</archs>
-                    </subvolume>
-                    <subvolume>
-                        <path>boot/grub2/powerpc-ieee1275</path>
-                        <archs>ppc,!board_powernv</archs>
-                    </subvolume>
-                    <subvolume>
-                        <path>boot/grub2/s390x-emu</path>
-                        <archs>s390</archs>
-                    </subvolume>
-                    <subvolume>
-                        <path>boot/grub2/x86_64-efi</path>
-                        <archs>x86_64</archs>
-                    </subvolume>
-                </subvolumes>
-            </volume>
-
-            <!-- No swap partition is defined, so it's never created -->
-        </volumes>
-        </partitioning>
-
-        <order config:type="integer">400</order>
-        <additional_dialogs>inst_user_first</additional_dialogs>
-      </system_role>
-
       <system_role>
         <id>micro_os_role_ra_agent</id>
 
@@ -563,7 +459,7 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 	</container_host_role_description>
         <micro_os_gnome_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS Desktop (GNOME) [BETA]</label>
+          <label>MicroOS Desktop (GNOME) [RC]</label>
         </micro_os_gnome_desktop_role>
         <micro_os_gnome_desktop_role_description>
           <label>• MicroOS Desktop with automatic updates and rollback
@@ -588,15 +484,6 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 • Remote attestation verifier based on Keylime and TPM2.0 (required hardware)
 • Create /etc/keylime.conf based on /etc/usr/keylime.conf and start keylime_{verifier,registrar}.service</label>
         </micro_os_role_ra_verifier_description>
-        <micro_os_kde_desktop_role>
-          <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS Desktop (KDE Plasma) [ALPHA]</label>
-        </micro_os_kde_desktop_role>
-        <micro_os_kde_desktop_role_description>
-          <label>• MicroOS Desktop with automatic updates and rollback
-• Install Apps using `Discover`
-• Includes Podman Container Runtime by default</label>
-        </micro_os_kde_desktop_role_description>
 
     </texts>
 
