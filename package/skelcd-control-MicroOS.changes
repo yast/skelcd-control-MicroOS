@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Jul 14 12:38:44 UTC 2022 - Richard Brown <rbrown@suse.com>
+
+- Restore KDE Desktop as Alpha (boo#1201049)
+- 20220714
+
+-------------------------------------------------------------------
 Thu Jun 30 08:59:22 UTC 2022 - Richard Brown <rbrown@suse.com>
 
 - Flag GNOME Desktop as RC, remove KDE Desktop (boo#1201049)
