@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Jul 25 15:14:00 UTC 2022 - Shawn W Dunn <sfalken@cloverleaf-linux.org>
+
+- Update MicroOS KDE Pattern to use transactional-update
+- 20220725
+
+-------------------------------------------------------------------
 Thu Jul 14 12:38:44 UTC 2022 - Richard Brown <rbrown@suse.com>
 
 - Restore KDE Desktop as Alpha (boo#1201049)
