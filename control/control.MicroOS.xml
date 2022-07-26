@@ -364,7 +364,7 @@ textdomain="control"
           <polkit_default_privs>standard</polkit_default_privs>
        </globals>
 	      <software>
-            <default_patterns>microos_base microos_base_packagekit microos_defaults microos_hardware microos_kde_desktop container_runtime bootloader</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_kde_desktop container_runtime bootloader</default_patterns>
         </software>
         <partitioning>
         <expert_partitioner_warning config:type="boolean">true</expert_partitioner_warning>
