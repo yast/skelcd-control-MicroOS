@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Mon Jul 25 15:14:00 UTC 2022 - Shawn W Dunn <sfalken@cloverleaf-linux.org>
 
-- Update MicroOS KDE Pattern to use transactional-update
+- Update MicroOS KDE Pattern to use transactional-update (boo#1201874)
 - 20220725
 
 -------------------------------------------------------------------
