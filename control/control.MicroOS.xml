@@ -457,7 +457,7 @@ textdomain="control"
         </partitioning>
 
         <order config:type="integer">400</order>
-        <additional_dialogs>inst_microos_role inst_user_first</additional_dialogs>
+        <additional_dialogs>inst_user_first</additional_dialogs>
       </system_role>
 
       <system_role>
