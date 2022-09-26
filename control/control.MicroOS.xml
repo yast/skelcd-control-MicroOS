@@ -239,6 +239,10 @@ textdomain="control"
         <id>micro_os_role</id>
 
         <order config:type="integer">100</order>
+        <software>
+            <default_patterns>microos_tools</default_patterns>
+        </software>
+
         <additional_dialogs>inst_microos_role</additional_dialogs>
 
       </system_role>
@@ -247,7 +251,7 @@ textdomain="control"
         <id>container_host_role</id>
 
         <software>
-            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware container_runtime bootloader</default_patterns>
+            <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_tools container_runtime bootloader</default_patterns>
         </software>
 
         <order config:type="integer">200</order>
@@ -464,7 +468,7 @@ textdomain="control"
         <id>micro_os_role_ra_agent</id>
 
 	<software>
-          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_agent bootloader</default_patterns>
+          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_agent microos_tools bootloader</default_patterns>
 	</software>
         <order config:type="integer">500</order>
         <additional_dialogs>inst_microos_role</additional_dialogs>
@@ -474,7 +478,7 @@ textdomain="control"
         <id>micro_os_role_ra_verifier</id>
 
 	<software>
-          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_verifier bootloader</default_patterns>
+          <default_patterns>microos_base microos_base_zypper microos_defaults microos_hardware microos_ra_verifier microos_tools bootloader</default_patterns>
 	</software>
         <order config:type="integer">600</order>
         <additional_dialogs>inst_microos_role</additional_dialogs>
