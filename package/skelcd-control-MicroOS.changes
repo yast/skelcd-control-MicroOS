@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Oct 27 14:25:35 UTC 2022 - Richard Brown <rbrown@suse.com>
+
+- Desktop-GNOME: Use easy polkit profile (boo#1204792)
+- 20221027
+
+-------------------------------------------------------------------
 Thu Oct 27 06:42:35 UTC 2022 - Fabian Vogt <fvogt@suse.com>
 
 - Fix syntax of additional_dialogs (boo#1202852)
