@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Oct 27 06:42:35 UTC 2022 - Fabian Vogt <fvogt@suse.com>
+
+- Fix syntax of additional_dialogs (boo#1202852)
+- 20221026
+
+-------------------------------------------------------------------
 Thu Sep 29 12:52:01 UTC 2022 - Guillaume GARDET <guillaume.gardet@opensuse.org>
 
 - Disable kdump for %arm - boo#1203888
