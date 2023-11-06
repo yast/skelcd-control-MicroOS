@@ -1,9 +1,8 @@
-
 # See https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 
 name: CI
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   Package:
@@ -12,30 +11,29 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        distro:  [ "tumbleweed", "leap_latest" ]
+        distro: [ "tumbleweed" ]
 
     container:
       image: registry.opensuse.org/yast/head/containers_${{matrix.distro}}/yast-ruby
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
 
-    - name: Git Checkout
-      uses: actions/checkout@v2
+      - name: Install Prerequisites
+        # use jing for validation instead of xmllint
+        run: |-
+          rake build_dependencies:install
+          zypper --non-interactive install --no-recommends jing
 
-    - name: Install Prerequisites
-      # use jing for validation instead of xmllint
-      run: |-
-        rake build_dependencies:install
-        zypper --non-interactive install --no-recommends jing
+      # just for easier debugging...
+      - name: Inspect Installed Packages
+        run: rpm -qa | sort
 
-    # just for easier debugging...
-    - name: Inspect Installed Packages
-      run: rpm -qa | sort
+      # must be before the package build as it installs the /usr/lib/skelcd/CD1/control.xml
+      # which overwrites the original file from skelcd-control-openSUSE
+      - name: Validate XML
+        run: rake test:validate
 
-    # must be before the package build as it installs the /usr/lib/skelcd/CD1/control.xml
-    # which overwrites the original file from skelcd-control-openSUSE
-    - name: Validate XML
-      run:  rake test:validate
-
-    - name: Package Build
-      run: yast-ci-ruby -o package
+      - name: Package Build
+        run: yast-ci-ruby -o package
