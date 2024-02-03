@@ -566,10 +566,10 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 	</container_host_role_description>
         <micro_os_gnome_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS Desktop (GNOME) [RC]</label>
+          <label>openSUSE Aeon (Gnome) [RC]</label>
         </micro_os_gnome_desktop_role>
         <micro_os_gnome_desktop_role_description>
-          <label>• MicroOS Desktop with automatic updates and rollback
+          <label>• openSUSE Aeon offering the GNOME Desktop built on MicroOS
 • Install Apps using `Software`
 • Includes Podman Container Runtime by default</label>
         </micro_os_gnome_desktop_role_description>
@@ -594,10 +594,10 @@ configured accordingly to match the use case of the role. &lt;/p&gt;</label>
 	</micro_os_role_ra_verifier_description>
 	<micro_os_kde_desktop_role>
           <!-- TRANSLATORS: a label for a system role -->
-          <label>MicroOS Desktop (KDE Plasma) [ALPHA]</label>
+          <label>openSUSE Kalpa (Plasma) [ALPHA]</label>
         </micro_os_kde_desktop_role>
         <micro_os_kde_desktop_role_description>
-          <label>• MicroOS Desktop with automatic updates and rollback
+          <label>• openSUSE Kalpa offering the KDE Plasma Desktop built on MicroOS
 • Install Apps using `Discover`
 • Includes Podman Container Runtime by default</label>
         </micro_os_kde_desktop_role_description>
