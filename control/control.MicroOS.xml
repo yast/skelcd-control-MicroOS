@@ -127,6 +127,8 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
+            <encryption_method>luks2</encryption_method>
+            <encryption_pbkdf>pbkdf2</encryption_pbkdf>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
@@ -271,6 +273,8 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
+            <encryption_method>luks2</encryption_method>
+            <encryption_pbkdf>pbkdf2</encryption_pbkdf>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
@@ -375,6 +379,8 @@ textdomain="control"
 
         <proposal>
             <lvm config:type="boolean">false</lvm>
+            <encryption_method>luks2</encryption_method>
+            <encryption_pbkdf>pbkdf2</encryption_pbkdf>
             <windows_delete_mode config:type="symbol">all</windows_delete_mode>
             <linux_delete_mode config:type="symbol">all</linux_delete_mode>
             <other_delete_mode config:type="symbol">all</other_delete_mode>
