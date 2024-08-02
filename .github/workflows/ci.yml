@@ -36,4 +36,6 @@ jobs:
         run: rake test:validate
 
       - name: Package Build
+        # skip in master, but run in forks
+        if:  github.ref_name != 'master' || github.repository_owner != 'yast'
         run: yast-ci-ruby -o package
